@@ -1,6 +1,7 @@
 from servicos.cliente_servicos import adicionar_cliente, listar_clientes, remover_cliente, atualizar_cliente
 from servicos.produto_servicos import adicionar_produto, listar_produtos, remover_produto, atualizar_produto
-from servicos.compra_servicos import cadastrar_compra, listar_compras
+from servicos.compra_servicos import cadastrar_compra, listar_compras, remover_compra
+
 def admin_tela(usuario):
     while(True):
         print(f"Bem vindo {usuario[1]}")
@@ -84,7 +85,8 @@ def admin_tela(usuario):
                 print("""
                 1 - Cadastrar compra
                 2 - Listar compras
-                3 - Sair
+                3 - Remover compra
+                4 - Sair
                 """)
 
                 opc = input("Digite a opção desejada: ")
@@ -99,6 +101,9 @@ def admin_tela(usuario):
                     compras = listar_compras(usuario[0])
                     print(compras)
                 elif opc == "3":
+                    id_compra = input("Digite o id da compra: ")
+                    remover_compra(id_compra, usuario[0])
+                elif opc == "4":
                     break
 
         elif menu == "4":

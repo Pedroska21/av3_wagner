@@ -7,7 +7,7 @@ def inserir_usuario(email, password):
         conn = criar_conexao()
         cursor = conn.cursor()
 
-        sql = "INSERT INTO login.usuarios (email, senha) VALUES (%s, %s)"        
+        sql = "INSERT INTO usuarios.usuarios (email, senha) VALUES (%s, %s)"        
         cursor.execute(sql, (email, hashed_password))
         conn.commit()
 
@@ -22,7 +22,7 @@ def login(email, password):
         conn = criar_conexao()
         cursor = conn.cursor()
 
-        sql = "SELECT * FROM login.usuarios WHERE email = %s"
+        sql = "SELECT * FROM usuarios.usuarios WHERE email = %s"
         cursor.execute(sql, (email,))
         resultado = cursor.fetchone()
         

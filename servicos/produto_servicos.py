@@ -26,9 +26,9 @@ def remover_produto(id_produto):
 
 
 
-def atualizar_produto(id_produto, nome_produto, quantidade):
+def atualizar_produto(id_produto, nome_produto, quantidade_produto, preco_produtos):
     conn = criar_conexao()
     cursor = conn.cursor()
-    sql = 'UPDATE farmacia.produtos SET nome_produto = %s, quantidade = %s WHERE id_produto = %s'
-    cursor.execute(sql, [nome_produto, quantidade, id_produto])
+    sql = 'UPDATE farmacia.produtos SET nome_produto = %s, quantidade_produto = %s, preco_produto = %s WHERE id_produto = %s'
+    cursor.execute(sql, [nome_produto, quantidade_produto, preco_produtos, id_produto])
     conn.commit()

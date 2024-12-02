@@ -16,3 +16,10 @@ def listar_compras(id_usuario):
     cursor.execute(sql, [id_usuario])
     compras = cursor.fetchall()
     return compras
+
+def remover_compra(id_compra, id_usuario):
+    conn = criar_conexao()
+    cursor = conn.cursor()
+    sql = 'SELECT * FROM farmacia.compras where id_compra = %s and id_usuario = %s'
+    cursor.execute(sql, [id_compra, id_usuario])
+    conn.commit()

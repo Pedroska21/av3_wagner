@@ -16,6 +16,6 @@ id_compra serial primary key,
 id_cliente int references clientes(id_cliente),
 id_produto int references produtos(id_produto),
 id_usuario int not null,
-foreign key (id_usuario) references login.usuarios(id),
+foreign key (id_usuario) references usuarios.usuarios(id),
 preco_compra real not null
 );
