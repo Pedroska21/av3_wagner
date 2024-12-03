@@ -20,7 +20,7 @@ def listar_produtos():
 def remover_produto(id_produto):
     conn = criar_conexao()
     cursor = conn.cursor()
-    sql = 'DELETE FROM farmacia.produtos id_produto = %s'
+    sql = 'DELETE FROM farmacia.produtos where id_produto = %s'
     cursor.execute(sql, [id_produto])
     conn.commit()
 
